@@ -12,7 +12,7 @@ app.get("/",function(req,res){
 			console.log("Error loading html file")
 			throw err
 		}
-		res.send(data)
+		res.send(data.toString())
 		console.log("respond")
 	})
 
