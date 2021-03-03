@@ -5,6 +5,9 @@ const fs = require("fs")
 const app = express()
 const port = 17000
 
+function printTime(){
+	
+}
 
 app.get("/",function(req,res){
 	fs.readFile("./static/templates/index.html", function(err,data){
@@ -13,7 +16,7 @@ app.get("/",function(req,res){
 			throw err
 		}
 		res.send(data.toString())
-		console.log("respond")
+		printTime()
 	})
 
 })
