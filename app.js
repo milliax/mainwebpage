@@ -5,8 +5,9 @@ const fs = require("fs")
 const app = express()
 const port = 17000
 
-function printTime(){
-	
+function printInfo(ip){
+	console.log(Date())
+	console.log(ip)
 }
 
 app.get("/",function(req,res){
@@ -16,7 +17,8 @@ app.get("/",function(req,res){
 			throw err
 		}
 		res.send(data.toString())
-		printTime()
+		var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress
+		printInfo(ip)
 	})
 
 })
