@@ -23,4 +23,10 @@ app.get("/",function(req,res){
 
 })
 
-app.listen(port,() => console.log('server running on %d',port))
+//app.listen(port,() => console.log('server running on %d',port))
+
+app.listen(port,function(){
+	console.log("server running on %d",port)
+	process.stdout.write("server start time : ")
+	console.log(Date())
+})
